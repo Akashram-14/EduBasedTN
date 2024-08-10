@@ -1,0 +1,112 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+  }
+  
+  .login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: rgba(240, 240, 240, 0.9);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+  }
+  
+  .english {
+    background: url('C:\Users\AKASH\OneDrive\Desktop\Sem 5\SDP\sdp react\my-app\src\department-of-information-technology-high-resolution-logo-transparent.png') no-repeat center center fixed;
+    background-size: 43%;
+  }
+  
+  .tamil {
+    background: url('C:\Users\AKASH\OneDrive\Desktop\Sem 5\SDP\sdp react\my-app\src\thagaval-thozhilnutpa-thurai-high-resolution-logo-transparent.png') no-repeat center center fixed;
+    background-size: 43%;
+  }
+  
+  .language-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 50px;
+  }
+  
+  .form1{
+    margin-bottom: 100px;
+    opacity: 1000%;
+  }
+
+  
+  .logo {
+    width: 100px;
+    height: auto;
+    margin-bottom: 1rem;
+  }
+  
+  h2 {
+    margin-bottom: 1.5rem;
+    color: #333;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .input-field {
+    width: 100%;
+    padding: 0.75rem;
+    margin: 0.75rem 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-weight: 900;
+  }
+  
+  .sign-in-button {
+    width: 100%;
+    padding: 0.75rem;
+    margin-top: 1.5rem; 
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 900;
+  }
+  
+  .sign-in-button:hover {
+    background-color: #45a049;
+  }
+  
+  .powered-by {
+    margin-top: 1rem;
+    font-size: 0.875rem;
+    color: #555;
+  }
+  
+  .powered-by a {
+    color: #007BFF;
+    text-decoration: none;
+  }
+  
+  .powered-by a:hover {
+    text-decoration: underline;
+  }
+  
+  #button1{
+    text-decoration: none;
+  }

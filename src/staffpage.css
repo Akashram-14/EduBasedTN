@@ -1,0 +1,76 @@
+.staff-page {
+    display: flex;
+    padding: 20px;
+    background-color: #f9f9f9;
+    min-height: 100vh; 
+}
+  
+.staff-portfolio {
+    width: 50%; 
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 20px;
+}
+  
+.staff-photo {
+    margin-top: 20%;
+    width: 200px;
+    height: 200px;
+    margin-bottom: 20px;
+}
+  
+.staff-details {
+    text-align: center;
+}
+  
+.staff-actions {
+    width: 50%; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+  
+.action-box {
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+  
+.action-box h3 {
+    margin-bottom: 10px;
+}
+  
+.action-box input {
+    padding: 10px;
+    margin-right: 10px;
+    width: 60%; 
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+  
+.action-box button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #002f6c;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    width: auto;
+    text-decoration: none;
+    margin-bottom: 10px; 
+}
+
+
+.action-box button:last-child {
+    margin-bottom: 0; 
+}
+  
+#button1 {
+    text-decoration: none;
+}

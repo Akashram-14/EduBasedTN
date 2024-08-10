@@ -1,0 +1,109 @@
+.student-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+  }
+  
+  .student-info-container {
+    display: flex;
+    align-items: flex-start;
+    width: 1000%;
+    max-width: 1000px;
+    margin-bottom: 40px; /* Add margin-bottom to create space between the details box and the footer */
+  }
+  
+  .student-photo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px; /* Adjust width as needed */
+    height: 100%;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-right: 10px; /* Reduce margin-right to make the box smaller */
+  }
+  
+  .student-photo {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+  }
+  
+  .student-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex-grow: 1;
+    max-height: 300px; /* Set a smaller max-height */
+    overflow-y: auto; /* Make it scrollable if content overflows */
+    margin-right: -50px;
+  }
+  
+  .details {
+    text-align: left;
+    width: 100%;
+    margin-bottom: 5px; /* Further reduce margin-bottom */
+  }
+  
+  .detail-box {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px; /* Keep padding small */
+    border: 1px solid #ddd;
+    margin-bottom: 5px; /* Keep margin-bottom small */
+    border-radius: 5px;
+    font-size: 0.9rem; /* Reduce font size */
+  }
+  
+  .label {
+    font-weight: bold;
+  }
+  
+  .value {
+    text-align: right;
+  }
+  
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 10px;
+    margin-left: 56%;
+  }
+  
+  .result-button,
+  .tasks-button {
+    padding: 5px 10px; /* Keep padding small */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: green;
+    color: white;
+  }
+  
+  .result-button:hover,
+  .tasks-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .result-button,
+  .tasks-button {
+    margin-right: 5px; /* Add space between the buttons */
+  }
+  
+  .tasks-button:last-child {
+    margin-right: 0; /* Remove margin from the last button */
+  }
+  
+  #button1 {
+    text-decoration: none;
+    color: white;
+  }
+  

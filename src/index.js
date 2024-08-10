@@ -1,13 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+import './i18n.js';
+// import App from './App';
 import reportWebVitals from './reportWebVitals';
+// import PreLogin from './prelogin.js';
+// import PreHome from './prehome.js';
+import Home from './home.js';
+import RegistrationPage from './register.js';
+// import AdminLogin from './adminlogin.js';
+// import StaffLogin from './stafflogin.js';
+// import StudentLogin from './studentlogin.js';
+// import LoginBoxes from './loginbox';
+// import Footer from './footer';
+// import Login from './login';
 
+import App from './App.js';
+import { BrowserRouter } from 'react-router-dom';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <App />
+  <React.StrictMode >
+    <BrowserRouter>
+    <App/>
+  </BrowserRouter>
   </React.StrictMode>
 );
 

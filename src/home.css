@@ -1,0 +1,53 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
+  font-family: Arial, sans-serif;
+}
+
+.home-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex-grow: 1;
+}
+
+.banner {
+  background: url('https://img.freepik.com/premium-photo/contemporary-indian-school-buildings_349936-481.jpg') no-repeat center center;
+  background-size: cover;
+  text-align: center;
+  padding: 100px 20px;
+  color: white;
+}
+
+.banner-content {
+  background-color: whitesmoke; /* Semi-transparent background */
+  color: white;
+  display: inline-block;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Optional: shadow for better visibility */
+}
+
+.info-section {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px 0;
+  margin: 20px 0;
+}
+
+.info-box {
+  width: 30%;
+  padding: 20px;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  text-align: center;
+}
+
+#content1 {
+  backface-visibility: visible;
+}

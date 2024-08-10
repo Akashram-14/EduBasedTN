@@ -1,0 +1,59 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
+  font-family: Arial, sans-serif;
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin: 20px 0; /* Added margin for spacing */
+  flex-grow: 1; /* Ensure it grows with the content */
+}
+
+.login-box {
+  background-color: yellow;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+  width: 150px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s, background-color 0.3s;
+  position: relative;
+  cursor: pointer;
+}
+
+.login-box .hover-text {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.login-box:hover {
+  transform: scale(1.1);
+  background-color: #e0e0e0;
+}
+
+.login-box:hover .default-text {
+  display: none;
+}
+
+.login-box:hover .hover-text {
+  display: block;
+}

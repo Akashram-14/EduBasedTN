@@ -1,0 +1,158 @@
+/* prelogin.css */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden;
+    font-family: Arial, sans-serif;
+  }
+  
+  .home-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  header {
+    width: 100%;
+  }
+  
+  footer {
+    width: 100%;
+  }
+  
+  .main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px; 
+    padding-bottom: 20px; 
+    overflow-y: auto;
+  }
+  
+  .info-section {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding: 20px 0;
+  }
+  
+  .info-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 20%;
+  }
+  
+  .info-box .icon {
+    margin-bottom: 10px;
+    width: 100px; /* Adjusted width */
+    height: 100px; /* Adjusted height */
+  }
+  
+  .info-box .icon img {
+    width: 100%; /* Ensures the image fits within the icon div */
+    height: 100%; /* Ensures the image fits within the icon div */
+    object-fit: contain; /* Ensures the image maintains its aspect ratio */
+  }
+  
+  .info-text {
+    background: linear-gradient(to right, #90ee90, #00008b);
+    border-radius: 10px;
+    padding: 5px;
+    width: 100%;
+    color: #000; 
+    font-weight: bold;
+    margin-top: 10px; /* Added margin to separate the text from the image */
+  }
+  
+  .info-title {
+    font-size: 18px;
+    margin: 5px 0;
+  }
+  
+  .info-count {
+    font-size: 24px;
+    margin: 5px 0;
+  }
+  
+  .banner-content {
+    text-align: center;
+    background-color: #2d3e50;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+    width: 80%;
+  }
+  
+  .banner-content button {
+    background-color: white;
+    color: #2d3e50;
+    border: none;
+    padding: 10px 20px;
+    width: 20%;
+    margin-top: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .banner-content button:hover {
+    background-color: green;
+    color: white;
+  }
+  
+  .links-section {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding: 20px 0;
+  }
+  
+  .link-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 30%;
+  }
+  
+  .link-box img {
+    margin-bottom: 10px;
+    width: 100px; /* Adjusted width */
+    height: 100px; /* Adjusted height */
+    object-fit: contain; /* Ensures the image maintains its aspect ratio */
+  }
+  
+  .link-box button {
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .link-box button:hover {
+    background-color: green;
+    color: #2d3e50;
+    text-decoration: none;
+  }
+
+  #button1{
+    text-decoration: none;
+  }
+
+  #content{
+    color: white;
+  }
+
+  
+
+  

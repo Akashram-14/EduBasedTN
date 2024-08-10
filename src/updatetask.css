@@ -1,0 +1,99 @@
+.update-tasks-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .update-tasks {
+    flex: 1;
+    max-width: 800px; /* Maximum width */
+    margin: 40px auto; /* Add margin to create space from header and footer */
+    padding: 100px; /* Padding around the box */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    width: auto;
+  }
+  
+  .update-tasks h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .new-task {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .new-task input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+  }
+  
+  .new-task button {
+    padding: 12px 20px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+  }
+  
+  .latest-task {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .update-tasks ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .update-tasks li {
+    display: flex;
+    flex-direction: column; /* Stack task text and buttons vertically */
+    margin-bottom: 10px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .update-tasks li.completed {
+    text-decoration: line-through;
+    background-color: #d4edda;
+  }
+  
+  .task-text {
+    font-weight: bold; /* Bold task text */
+    margin-bottom: 5px; /* Space below the task text */
+  }
+  
+  .task-actions {
+    display: flex;
+    justify-content: space-between; /* Space buttons evenly */
+  }
+  
+  .task-actions button {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: 10px; /* Add space between buttons */
+  }
+  
+  .task-actions button:nth-child(1) {
+    background-color: #4caf50;
+    color: white;
+  }
+  
+  .task-actions button:nth-child(2) {
+    background-color: #f44336;
+    color: white;
+  }
+  
+  #addtask{
+    width: fit-content;
+  }

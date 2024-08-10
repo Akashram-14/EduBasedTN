@@ -1,0 +1,54 @@
+.donation-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+  }
+  
+  .donation-container {
+    background-color: #f5f5f5;
+    padding: 40px; /* Increased padding for better spacing */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+  }
+  
+  .donation-form .form-group {
+    margin-bottom: 20px; /* Increased margin for better spacing */
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .donation-form label {
+    font-weight: bold;
+    margin-bottom: 5px; /* Increased margin for better spacing */
+  }
+  
+  .donation-form input {
+    width: 100%; /* Make input boxes full width */
+    max-width: 100%; /* Ensure they don't exceed container width */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 10px; /* Add margin-bottom for spacing */
+  }
+  
+  .donate-button {
+    padding: 10px 30px; /* Increased padding for better spacing */
+    border: none;
+    border-radius: 5px;
+    background-color: green;
+    color: white;
+    cursor: pointer;
+    margin-top: 20px; /* Added margin-top for better spacing */
+  }
+  
+  .donate-button:hover {
+    background-color: #0056b3;
+  }
+  

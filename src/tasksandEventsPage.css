@@ -1,0 +1,65 @@
+html, body {
+    height: 100%;
+    margin: 0;
+  }
+  
+  .tasks-events-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .content-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 40px;
+  }
+  
+  .tasks-events-box {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+    margin-left: 750px;
+  }
+  
+  .tasks-section, .events-section {
+    width: 48%;
+  }
+  
+  .tasks-section h2, .events-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .tasks-section ul, .events-section ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .tasks-section li, .events-section li {
+    margin-bottom: 10px;
+    font-size: 1rem;
+  }
+  
+  .events-section a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .events-section a:hover {
+    text-decoration: underline;
+  }
+  
+  .footer {
+    margin-top: auto;
+  }
+  

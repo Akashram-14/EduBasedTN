@@ -1,0 +1,59 @@
+.result-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .result-info-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .result-info {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 800px; /* Adjust the max-width as needed */
+    
+  }
+  
+  .detail-box {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    margin-left: 120px; /* Add margin to create space between boxes */
+  }
+  
+  .label {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .value {
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid #ccc;
+    width: 48%; /* Adjust width for both inputs to fit properly */
+    text-align: left;
+    padding: 5px 0; /* Add padding for better spacing */
+  }
+  
+  .value:focus {
+    outline: none;
+    border-bottom: 1px solid #000;
+  }
+  
+  /* Add specific styles for the subject name and mark inputs */
+  .subject-name {
+    margin-right: 10px; /* Add margin between name and mark inputs */
+  }
+  
+  .subject-mark {
+    margin-left: 10px; /* Add margin between name and mark inputs */
+  }
+  
