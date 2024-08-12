@@ -1,34 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 import './studentportfolio.css';
 import PreHeader from './preheader';
 import Footer from './footer';
 import clg from './College.jpg';
+import { useLocation } from 'react-router-dom';
 
 const StudentPortfolio = () => {
   const { t } = useTranslation();
-  const [studentData, setStudentData] = useState({
-    Name: 'John Doe',
-    RollNo: '123456',
-    ClassSection: '10-A',
-    Address: '123 Main St, City, State',
-    School: 'ABC High School',
-    Tamil: '95',
-    English: '88',
-    Maths: '92',
-    History: '90',
-    Science: '85',
-    AcademicPercentage: '90%',
-    OverallPercentage: '88%',
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setStudentData({
-      ...studentData,
-      [name]: value,
-    });
-  };
+  const location = useLocation();
+  const studentData = location.state?.studentData; // Optional chaining to prevent errors
 
   return (
     <div className="student-portfolio-page">
@@ -38,18 +19,22 @@ const StudentPortfolio = () => {
           <img src={clg} alt="Student" className="student-photo" />
         </div>
         <div className="student-info">
-          {Object.keys(studentData).map((field, index) => (
-            <div key={index} className="detail-box">
-              <p className="label">{t(field.replace(/([A-Z])/g, ' $1').trim())}:</p>
-              <input
-                type="text"
-                name={field}
-                value={studentData[field]}
-                onChange={handleChange}
-                className="value"
-              />
-            </div>
-          ))}
+          {studentData ? (
+            Object.keys(studentData).map((field, index) => (
+              <div key={index} className="detail-box">
+                <p className="label">{t(field.replace(/([A-Z])/g, ' $1').trim())}:</p>
+                <input
+                  type="text"
+                  name={field}
+                  value={studentData[field]}
+                  className="value"
+                  readOnly
+                />
+              </div>
+            ))
+          ) : (
+            <p>{t('No student data available')}</p>
+          )}
         </div>
       </div>
       <Footer />

@@ -1,0 +1,34 @@
+.standards-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+  }
+  
+  .content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .box-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .box {
+    margin: 10px;
+    padding: 20px;
+    border: 2px solid #000;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .box button {
+    margin-top: 10px;
+  }
+  

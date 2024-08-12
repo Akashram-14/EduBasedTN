@@ -26,9 +26,9 @@ const PreHeader = () => {
       <nav className="header-nav">
         <Link to='/aboutus'>{t('about_us')}</Link>
         <Link to='/directorates'>{t('directorates')}</Link>
-        <a href="#">{t('special_initiatives')}</a>
+        <a href="#"><Link to='/translate'>{t('special_initiatives')}</Link></a>
         <Link to='/righttoinfo'>{t('right_to_information')}</Link>
-        <Link to='https://tnschools.gov.in/press-release'>{t('academics')}</Link>
+        <Link to='/standards'>{t('academics')}</Link>
         <a href="#"><Link to='/donate'>{t('donate_to_namma_school')}</Link></a>
         <div className="language-switch" onClick={() => switchLanguage(language === 'en' ? 'ta' : 'en')}>
           <span>{language === 'en' ? 'அ' : 'A'}</span>

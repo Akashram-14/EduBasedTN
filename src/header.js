@@ -29,9 +29,9 @@ const Header = () => {
       <nav className="header-nav">
         <a href="#"><Link to='/aboutus'>{t('about_us')}</Link></a>
         <a href="#"><Link to='/directorates'>{t('directorates')}</Link></a>
-        <a href="#">{t('special_initiatives')}</a>
+        <a href="#"><Link to='/translate'>{t('special_initiatives')}</Link></a>
         <a href="#"><Link to='/righttoinfo'>{t('right_to_information')}</Link></a>
-        <a href="#"><Link to='https://tnschools.gov.in/press-release'>{t('press_releases')}</Link></a>
+        <a href="#"><Link to='/standards'>{t('academics')}</Link></a>
         <a href="#"><Link to='/donate'>{t('donate_to_namma_school')}</Link></a>
         <div className="language-switch" onClick={() => switchLanguage(language === 'en' ? 'ta' : 'en')}>
           <span>{language === 'en' ? 'அ' : 'A'}</span>

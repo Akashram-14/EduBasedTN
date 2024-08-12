@@ -1,44 +1,53 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import PreHeader from './preheader';
 import Footer from './footer';
 import './updatetask.css';
 
 const UpdateTasks = () => {
-  const [tasks, setTasks] = useState([
-    { id: 1, text: 'Task 1', completed: false },
-    { id: 2, text: 'Task 2', completed: false },
-    { id: 3, text: 'Task 3', completed: false },
-  ]);
+  const [tasks, setTasks] = useState([]);
   const [newTaskText, setNewTaskText] = useState('');
   const [latestTask, setLatestTask] = useState('');
 
-  const handleInputChange = (id, newText) => {
-    setTasks(prevTasks =>
-      prevTasks.map(task =>
-        task.id === id ? { ...task, text: newText } : task
-      )
-    );
-  };
+  useEffect(() => {
+    axios.get('http://localhost:8080/api/tasks')
+      .then(response => setTasks(response.data))
+      .catch(error => console.error('There was an error fetching the tasks!', error));
+  }, []);
 
   const handleAddTask = () => {
     if (newTaskText.trim() !== '') {
-      const newTask = { id: Date.now(), text: newTaskText, completed: false };
-      setTasks(prevTasks => [...prevTasks, newTask]);
-      setLatestTask(newTaskText);
-      setNewTaskText('');
+      const newTask = { text: newTaskText, completed: false };
+      axios.post('http://localhost:8080/api/tasks', newTask)
+        .then(response => {
+          setTasks(prevTasks => [...prevTasks, response.data]);
+          setLatestTask(newTaskText);
+          setNewTaskText('');
+        })
+        .catch(error => console.error('There was an error adding the task!', error));
     }
   };
 
   const handleDeleteTask = id => {
-    setTasks(prevTasks => prevTasks.filter(task => task.id !== id));
+    axios.delete(`http://localhost:8080/api/tasks/${id}`)
+      .then(() => {
+        setTasks(prevTasks => prevTasks.filter(task => task.id !== id));
+      })
+      .catch(error => console.error('There was an error deleting the task!', error));
   };
 
   const handleToggleComplete = id => {
-    setTasks(prevTasks =>
-      prevTasks.map(task =>
-        task.id === id ? { ...task, completed: !task.completed } : task
-      )
-    );
+    const taskToUpdate = tasks.find(task => task.id === id);
+    const updatedTask = { ...taskToUpdate, completed: !taskToUpdate.completed };
+    axios.put(`http://localhost:8080/api/tasks/${id}`, updatedTask)
+      .then(response => {
+        setTasks(prevTasks =>
+          prevTasks.map(task =>
+            task.id === id ? response.data : task
+          )
+        );
+      })
+      .catch(error => console.error('There was an error updating the task!', error));
   };
 
   return (

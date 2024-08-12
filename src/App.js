@@ -24,6 +24,9 @@ import AttendancePage from './attendance';
 import IndividualAttend from './individualattend';
 import UpdateTasks from './updatetask';
 import RTIRequest from './righttoinfo';
+import StandardsPage from './StandardsPage';
+import QuestionsPage from './QuestionPage';
+
 
 function App() {
   return (
@@ -51,6 +54,10 @@ function App() {
       <Route path='/update' element={<UpdateTasks/>}/> 
       <Route path='/homepage' element={<Home/>}/>
       <Route path='/righttoinfo' element={<RTIRequest/>}/>
+      <Route path='/standards' element={<StandardsPage/>}/>
+      <Route path='/10th' element={<QuestionsPage/>}/>
+      <Route path='/9th' element={<QuestionsPage/>}/>
+      <Route path='/8th' element={<QuestionsPage/>}/>
     </Routes>
   );
 }

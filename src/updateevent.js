@@ -1,55 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './updateevent.css';
 import PreHeader from './preheader';
 import Footer from './footer';
+import { FaArrowLeft, FaArrowRight, FaArrowUp } from 'react-icons/fa';
 
 const UpdateEvents = () => {
-  const initialEvents = [
-    {
-      id: 1,
-      school: 'ABC High School',
-      event: 'Science Fair',
-      date: 'August 15, 2024',
-      description: 'Join us for an exciting day of science experiments and displays by students.',
-    },
-    {
-      id: 2,
-      school: 'XYZ Middle School',
-      event: 'Art Exhibition',
-      date: 'September 20, 2024',
-      description: 'Come and see the amazing artwork created by our talented students.',
-    },
-    {
-      id: 3,
-      school: 'LMN Elementary School',
-      event: 'Sports Day',
-      date: 'October 10, 2024',
-      description: 'A fun-filled day of sports activities and competitions for all grades.',
-    },
-    {
-      id: 4,
-      school: 'PQR High School',
-      event: 'Drama Night',
-      date: 'November 12, 2024',
-      description: 'An evening of theatrical performances by our students.',
-    },
-    {
-      id: 5,
-      school: 'STU Middle School',
-      event: 'Music Concert',
-      date: 'December 5, 2024',
-      description: 'A concert showcasing the musical talents of our students.',
-    },
-    {
-      id: 6,
-      school: 'VWX Elementary School',
-      event: 'Math Olympiad',
-      date: 'January 8, 2025',
-      description: 'A competitive math event for students from various grades.',
-    }
-  ];
-
-  const [events, setEvents] = useState(initialEvents);
+  const [events, setEvents] = useState([]);
   const [editingEventId, setEditingEventId] = useState(null);
   const [formData, setFormData] = useState({
     school: '',
@@ -57,6 +13,21 @@ const UpdateEvents = () => {
     date: '',
     description: ''
   });
+  const [showAddEvent, setShowAddEvent] = useState(false);
+
+  useEffect(() => {
+    const fetchEvents = async () => {
+      try {
+        const response = await fetch('http://localhost:8080/api/events');
+        const data = await response.json();
+        setEvents(data);
+      } catch (error) {
+        console.error('Error fetching events:', error);
+      }
+    };
+
+    fetchEvents();
+  }, []);
 
   const handleEditClick = (event) => {
     setEditingEventId(event.id);
@@ -73,23 +44,100 @@ const UpdateEvents = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSaveClick = () => {
-    setEvents(events.map(event => (
-      event.id === editingEventId ? { ...event, ...formData } : event
-    )));
-    setEditingEventId(null);
-    setFormData({
-      school: '',
-      event: '',
-      date: '',
-      description: ''
-    });
+  const handleSaveClick = async () => {
+    const updatedEvent = {
+      id: editingEventId,
+      ...formData,
+    };
+
+    // Send the updated event to the backend
+    try {
+      await fetch(`http://localhost:8080/api/events/${editingEventId}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(updatedEvent),
+      });
+
+      setEvents(events.map(event => (event.id === editingEventId ? updatedEvent : event)));
+      setEditingEventId(null);
+      setFormData({ school: '', event: '', date: '', description: '' });
+    } catch (error) {
+      console.error('Error updating event:', error);
+    }
+  };
+
+  const handleAddEventClick = () => {
+    setShowAddEvent(true);
+    setFormData({ school: '', event: '', date: '', description: '' });
+  };
+
+  const handleAddSaveClick = async () => {
+    const newEvent = {
+      school: formData.school,
+      event: formData.event,
+      date: formData.date,
+      description: formData.description
+    };
+
+    try {
+      const response = await fetch('http://localhost:8080/api/events', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(newEvent),
+      });
+
+      const addedEvent = await response.json();
+      setEvents([...events, addedEvent]);
+      setShowAddEvent(false);
+    } catch (error) {
+      console.error('Error adding event:', error);
+    }
   };
 
   return (
     <div>
       <PreHeader />
       <div className="App">
+        <button onClick={handleAddEventClick} className="add-event-button">Add Event</button>
+
+        <center>
+          {showAddEvent && (
+            <div className="event-card">
+              <input
+                type="text"
+                name="school"
+                value={formData.school}
+                onChange={handleChange}
+                placeholder="School Name"
+              />
+              <input
+                type="text"
+                name="event"
+                value={formData.event}
+                onChange={handleChange}
+                placeholder="Event Name"
+              />
+              <input
+                type="date"
+                name="date"
+                value={formData.date}
+                onChange={handleChange}
+              />
+              <textarea
+                name="description"
+                value={formData.description}
+                onChange={handleChange}
+                placeholder="Event Description"
+              />
+              <button onClick={handleAddSaveClick}>Save</button>
+            </div>
+          )}
+        </center>
+
         <div className="events-container">
           {events.map((event) => (
             <div key={event.id} className="event-card">
